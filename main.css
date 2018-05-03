@@ -19,6 +19,8 @@ body {
 }
 .slyGamePiece{
   position: absolute;
+  padding-left: 826px;
+  padding-top: 440px;
 }
 h1 {
   padding: 1.5rem 1.5rem 1.5rem .55rem;
