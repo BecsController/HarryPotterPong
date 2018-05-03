@@ -9,12 +9,12 @@ var keys = {};
     keys.ONEDOWN = 83;  //keycode S button
 
 var playerTwoPiece = {
-  x: 49, //where piece starts on x axis comparative to elem start pos
+  x: 0, //where piece starts on x axis comparative to elem start pos
   y: 0,  // where piece starts on y axis
   element: document.getElementsByClassName("slyGamePiece")[0]
 };
 var playerOnePiece = {
-  x: 50,
+  x: 0,
   y: 0,
   element: document.getElementsByClassName("gryfGamePiece")[0]
 };
