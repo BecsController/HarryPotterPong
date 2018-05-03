@@ -41,13 +41,13 @@ var movePieceOne = function(dx, dy){
 
 var detectPieceTwoMovement = function(){
   if (keys[keys.TWOUP]){
-    movePieceTwo(0, -5); //speed and direction piece moves on key
+    movePieceTwo(0, -15); //speed and direction piece moves on key
   } if (keys[keys.TWODOWN]){
-    movePieceTwo(0, 5);
+    movePieceTwo(0, 15);
   } if (keys[keys.ONEUP]){
-    movePieceOne(0, -5);
+    movePieceOne(0, -15);
   } if (keys[keys.ONEDOWN]){
-    movePieceOne(0, 5);
+    movePieceOne(0, 15);
   }
 };
 
