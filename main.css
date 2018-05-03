@@ -5,25 +5,39 @@ body {
   background-color: #000;
   height: 40rem;
 }
-.gryColOne, .gryColThree{
+.gryColOne{
   color: #7F0909;
 }
 .gryColTwo{
   color: #F7A200;
 }
-.slyColOne, .slyColThree{
+.slyColOne{
   color: #0D6217;
 }
 .slyColTwo{
   color: #AAAAAA;
 }
+
 .slyGamePiece{
   position: absolute;
-  padding-left: 826px;
+  padding-left: 875px;
   padding-top: 440px;
 }
+.gryfGamePiece{
+  position: absolute;
+}
+.snitch{
+  position: absolute;
+  color: #F7A200;
+  padding-left: 400px;
+  padding-top: 200px;
+}
 h1 {
-  padding: 1.5rem 1.5rem 1.5rem .55rem;
+  padding: 1rem 1rem 1rem .55rem;
+  font-weight: bold;
+}
+h4 {
+  padding: 1rem 1rem 1rem 2.5rem;
   font-weight: bold;
 }
 p {
