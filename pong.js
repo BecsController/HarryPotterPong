@@ -66,13 +66,15 @@ var ballX = 10;
 var ballY = 10;
 
 function moveBall(){
-//  snitchBall.y += ballY;
-//  snitchBall.element.style.top = snitchBall.y + 'px';
   if (snitchBall.x > 470){
+    ballX = -ballX;
+  } if (snitchBall.x < -390){
     ballX = -ballX;
   }
   snitchBall.x += ballX;
   snitchBall.element.style.left = snitchBall.x + 'px';
+  //  snitchBall.y += ballY;
+  //  snitchBall.element.style.top = snitchBall.y + 'px';
 };
 
 }
