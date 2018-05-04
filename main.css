@@ -33,8 +33,11 @@ body {
   padding-top: 200px;
 }
 h1 {
-  padding: 1rem 1rem 1rem .55rem;
+  padding: 1rem 1rem 0 7rem;
   font-weight: bold;
+}
+h3{
+  padding-left: 23rem;
 }
 h4 {
   padding: 1rem 1rem 1rem 2.5rem;
@@ -43,4 +46,5 @@ h4 {
 p {
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
 }
