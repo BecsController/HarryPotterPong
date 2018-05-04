@@ -9,8 +9,10 @@ var keys = {};
     keys.ONEDOWN = 83;  //keycode S button
 
 var gameBoard = document.getElementsByClassName("gameBoard")[0];
-var playerOneScore = document.getElementsByClassName("playerOneScore")[0].innerHTML;
-var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0].innerHTML;
+var playerOneScore = document.getElementsByClassName("playerOneScore")[0];
+var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0];
+var scoreCountOne = 0;
+var ScoreCountTwo = 0;
 
 var playerTwoPiece = {
   x: 875, //where piece starts on x axis comparative to elem start pos
@@ -80,6 +82,10 @@ function moveBall(){
     ballX = -ballX;         // reverse direction of ball
   } if ((snitchBall.x < pieceOneX) && (snitchBall.y >= playerOnePiece.y)
   && (snitchBall.y <= playerOnePiece.y + pieceOneH)){
+    ballX = -ballX;
+  } if (snitchBall.x > 860){
+    scoreCountOne++;
+    playerOneScore.innerHTML = scoreCountOne;
     ballX = -ballX;
   } if (snitchBall.y > 570){  //height of gameboard
     ballY = -ballY;
