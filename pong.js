@@ -47,13 +47,13 @@ var movePieceOne = function(dy){
 
 var detectPieceMovement = function(){
   if ((playerTwoPiece.y > 0) && (keys[keys.TWOUP])){
-    movePieceTwo(-15); //speed and direction piece moves on key ie amount of pixels from bottom
+    movePieceTwo(-5); //speed and direction piece moves on key ie amount of pixels from bottom
   } if ((playerTwoPiece.y < 435) && (keys[keys.TWODOWN])){
-    movePieceTwo(15);  //how far goes down y axis
+    movePieceTwo(5);  //how far goes down y axis
   } if ((playerOnePiece.y > 0) && (keys[keys.ONEUP])){
-    movePieceOne(-15);
+    movePieceOne(-5);
   } if ((playerOnePiece.y < 435) && (keys[keys.ONEDOWN])){
-    movePieceOne(15); //As long as p1piece is between 0 and 435 pixels it will move
+    movePieceOne(5); //As long as p1piece is between 0 and 435 pixels it will move
   }
 };
 function setSlyPieceDefaultPosition(){
@@ -65,10 +65,10 @@ setInterval(function(){
   setSlyPieceDefaultPosition();
   detectPieceMovement();
   moveBall();
-}, 1000/24); //function called 24 times per sec (smoothness of movement)
+}, 1000/60); //function called 60 times per sec (smoothness of movement)
 
-var ballX = 10; //amount of pixels it moves by on x axis
-var ballY = 10;
+var ballX = 5; //amount of pixels it moves by on x axis
+var ballY = 5;
 var pieceTwoX = 860 - 48; //width of gameboard - width of raquet
 var pieceTwoH = 198;  // height of raquet
 var pieceOneX = 0 + 48;  //Left edge of gameboard + width of raquet
