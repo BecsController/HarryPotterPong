@@ -17,7 +17,6 @@ body {
 .slyColTwo{
   color: #AAAAAA;
 }
-
 .slyGamePiece{
   position: absolute;
 }
@@ -26,6 +25,14 @@ body {
 }
 .snitch{
   position: absolute;
+}
+.playerTwoScore{
+  margin-left: 6rem;
+}
+.reset{
+  color: #544E72;
+  box-shadow: 3px 3px 5px 0px rgba(99,97,99,1);
+  margin-bottom: 5px;
 }
 h1 {
   padding: 1rem 1rem 0 7rem;
