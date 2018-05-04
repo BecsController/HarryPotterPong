@@ -36,8 +36,8 @@ document.body.onkeydown = function(e){
 };
 
 var movePieceTwo = function(dy){
-  playerTwoPiece.y += dy;
-  playerTwoPiece.element.style.top = playerTwoPiece.y + 'px';
+  playerTwoPiece.y += dy;  // y access point = value of dy
+  playerTwoPiece.element.style.top = playerTwoPiece.y + 'px'; //turning dy into px from top of window
 };
 
 var movePieceOne = function(dy){
@@ -47,7 +47,7 @@ var movePieceOne = function(dy){
 
 var detectPieceMovement = function(){
   if (keys[keys.TWOUP]){
-    movePieceTwo(-15); //speed and direction piece moves on key
+    movePieceTwo(-15); //speed and direction piece moves on key ie amount of pixels from bottom
   } if (keys[keys.TWODOWN]){
     movePieceTwo(15);
   } if (keys[keys.ONEUP]){
@@ -59,22 +59,20 @@ var detectPieceMovement = function(){
 
 setInterval(function(){
   detectPieceMovement();
-  settingRandomBall();
+  moveBall();
 }, 1000/24); //function called 24 times per sec (smoothness of movement)
 
-var moveSnitch = function(dx, dy){
-  snitchBall.x += dx;
-  snitchBall.y += dy;
-  snitchBall.element.style.left = snitchBall.x + 'px';
-  snitchBall.element.style.top = snitchBall.y + 'px';
-};
+var ballX = 10;
+var ballY = 10;
 
-function settingRandomBall(){
-    moveSnitch(5, 0);
-    if (snitchBall.x > 470) {
-    moveSnitch(-5, 0);
-    setInterval();
-    }
+function moveBall(){
+//  snitchBall.y += ballY;
+//  snitchBall.element.style.top = snitchBall.y + 'px';
+  if (snitchBall.x > 470){
+    ballX = -ballX;
+  }
+  snitchBall.x += ballX;
+  snitchBall.element.style.left = snitchBall.x + 'px';
 };
 
 }
