@@ -13,8 +13,8 @@ var playerOneScore = document.getElementsByClassName("playerOneScore")[0].innerH
 var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0].innerHTML;
 
 var playerTwoPiece = {
-  x: 0, //where piece starts on x axis comparative to elem start pos
-  y: 0,  // where piece starts on y axis
+  x: 875, //where piece starts on x axis comparative to elem start pos
+  y: 440,  // where piece starts on y axis
   element: document.getElementsByClassName("slyGamePiece")[0]
 };
 var playerOnePiece = {
@@ -24,7 +24,7 @@ var playerOnePiece = {
 };
 var snitchBall = {
   x: 412,
-  y: 264, //approx the middle of the board
+  y: 245, //approx the middle of the board
   element: document.getElementsByClassName("snitch")[0]
 };
 
@@ -36,7 +36,7 @@ document.body.onkeydown = function(e){
 };
 
 var movePieceTwo = function(dy){
-  playerTwoPiece.y += dy;  // y access point = value of dy
+  playerTwoPiece.y += dy;  // y pos + value of dy in pixels
   playerTwoPiece.element.style.top = playerTwoPiece.y + 'px'; //turning dy into px from top of window
 };
 
@@ -58,6 +58,8 @@ var detectPieceMovement = function(){
 };
 
 setInterval(function(){
+  playerTwoPiece.element.style.left = playerTwoPiece.x + 'px';
+  playerTwoPiece.element.style.top = playerTwoPiece.y + 'px';
   detectPieceMovement();
   moveBall();
 }, 1000/24); //function called 24 times per sec (smoothness of movement)
