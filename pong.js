@@ -35,29 +35,25 @@ document.body.onkeydown = function(e){
   keys[kc] = e.type == 'keydown'; //target specific key from array on press by keycode
 };
 
-var movePieceTwo = function(dx, dy){
-  playerTwoPiece.x += dx;
+var movePieceTwo = function(dy){
   playerTwoPiece.y += dy;
-  playerTwoPiece.element.style.left = playerTwoPiece.x + 'px';
   playerTwoPiece.element.style.top = playerTwoPiece.y + 'px';
 };
 
-var movePieceOne = function(dx, dy){
-  playerOnePiece.x += dx;
+var movePieceOne = function(dy){
   playerOnePiece.y += dy;
-  playerOnePiece.element.style.left = playerOnePiece.x + 'px';
   playerOnePiece.element.style.top = playerOnePiece.y + 'px';
 };
 
 var detectPieceMovement = function(){
   if (keys[keys.TWOUP]){
-    movePieceTwo(0, -15); //speed and direction piece moves on key
+    movePieceTwo(-15); //speed and direction piece moves on key
   } if (keys[keys.TWODOWN]){
-    movePieceTwo(0, 15);
+    movePieceTwo(15);
   } if (keys[keys.ONEUP]){
-    movePieceOne(0, -15);
+    movePieceOne(-15);
   } if (keys[keys.ONEDOWN]){
-    movePieceOne(0, 15);
+    movePieceOne(15);
   }
 };
 
@@ -74,11 +70,11 @@ var moveSnitch = function(dx, dy){
 };
 
 function settingRandomBall(){
-  if (Math.random() < 0.5){
-    moveSnitch(0, -15);
-  } else {
-    moveSnitch(0, 15);
-  }
+    moveSnitch(5, 0);
+    if (snitchBall.x > 470) {
+    moveSnitch(-5, 0);
+    setInterval();
+    }
 };
 
 }
