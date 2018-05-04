@@ -56,10 +56,13 @@ var detectPieceMovement = function(){
     movePieceOne(15); //As long as p1piece is between 0 and 435 pixels it will move
   }
 };
-
-setInterval(function(){
+function setSlyPieceDefaultPosition(){
   playerTwoPiece.element.style.left = playerTwoPiece.x + 'px';
   playerTwoPiece.element.style.top = playerTwoPiece.y + 'px';
+};
+
+setInterval(function(){
+  setSlyPieceDefaultPosition();
   detectPieceMovement();
   moveBall();
 }, 1000/24); //function called 24 times per sec (smoothness of movement)
