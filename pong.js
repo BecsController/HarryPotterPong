@@ -72,11 +72,14 @@ var ballY = 5;
 var pieceTwoX = 860 - 48; //width of gameboard - width of raquet
 var pieceTwoH = 198;  // height of raquet
 var pieceOneX = 0 + 48;  //Left edge of gameboard + width of raquet
+var pieceOneH = 198;
 
 function moveBall(){
-  if (snitchBall.x > pieceTwoX){ // width of gameboard
+  if ((snitchBall.x > pieceTwoX) && (snitchBall.y >= playerTwoPiece.y)
+  && (snitchBall.y <= playerTwoPiece.y + pieceTwoH)){ // width of gameboard
     ballX = -ballX;         // reverse direction of ball
-  } if (snitchBall.x < pieceOneX){
+  } if ((snitchBall.x < pieceOneX) && (snitchBall.y >= playerOnePiece.y)
+  && (snitchBall.y <= playerOnePiece.y + pieceOneH)){
     ballX = -ballX;
   } if (snitchBall.y > 570){  //height of gameboard
     ballY = -ballY;
