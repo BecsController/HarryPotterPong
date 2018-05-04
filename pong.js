@@ -23,8 +23,8 @@ var playerOnePiece = {
   element: document.getElementsByClassName("gryfGamePiece")[0]
 };
 var snitchBall = {
-  x: 0,
-  y: 0,
+  x: 400,
+  y: 200,
   element: document.getElementsByClassName("snitch")[0]
 };
 
@@ -64,13 +64,16 @@ setInterval(function(){
 
 var ballX = 10;
 var ballY = 10;
+var pieceTwox = 860 - 48;
+var pieceTwoy = 198;
+var pieceOnex = 0 + 48;
 
 function moveBall(){
-  if (snitchBall.x > 860){
+  if (snitchBall.x > pieceTwox){ // width of gameboard
+    ballX = -ballX;         // reverse direction of ball
+  } if (snitchBall.x < pieceOnex){
     ballX = -ballX;
-  } if (snitchBall.x < 0){
-    ballX = -ballX;
-  } if (snitchBall.y > 570){
+  } if (snitchBall.y > 570){  //height of gameboard
     ballY = -ballY;
   } if (snitchBall.y < 0){
     ballY = -ballY;
