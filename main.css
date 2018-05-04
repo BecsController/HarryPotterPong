@@ -3,7 +3,7 @@ body {
 }
 .gameBoard{
   background-color: #000;
-  height: 40rem;
+  height: 640px;
 }
 .gryColOne{
   color: #7F0909;

@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', start)
 
 function start(){
-  //code for raquets
+
 var keys = {};
     keys.TWOUP = 38;    //keycode up arrow
     keys.TWODOWN = 40;  //keycode down arrow
     keys.ONEUP = 87;    //keycode W button
     keys.ONEDOWN = 83;  //keycode S button
+
+var gameBoard = document.getElementsByClassName("gameBoard")[0];
+var playerOneScore = document.getElementsByClassName("playerOneScore")[0].innerHTML;
+var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0].innerHTML;
 
 var playerTwoPiece = {
   x: 0, //where piece starts on x axis comparative to elem start pos
@@ -18,6 +22,12 @@ var playerOnePiece = {
   y: 0,
   element: document.getElementsByClassName("gryfGamePiece")[0]
 };
+var snitchBall = {
+  x: 0,
+  y: 0,
+  element: document.getElementsByClassName("snitch")[0]
+};
+
 
 document.body.onkeyup=
 document.body.onkeydown = function(e){
@@ -26,20 +36,20 @@ document.body.onkeydown = function(e){
 };
 
 var movePieceTwo = function(dx, dy){
-  playerTwoPiece.x += dx||0;
-  playerTwoPiece.y += dy||0;
+  playerTwoPiece.x += dx;
+  playerTwoPiece.y += dy;
   playerTwoPiece.element.style.left = playerTwoPiece.x + 'px';
   playerTwoPiece.element.style.top = playerTwoPiece.y + 'px';
 };
 
 var movePieceOne = function(dx, dy){
-  playerOnePiece.x += dx||0;
-  playerOnePiece.y += dy||0;
+  playerOnePiece.x += dx;
+  playerOnePiece.y += dy;
   playerOnePiece.element.style.left = playerOnePiece.x + 'px';
   playerOnePiece.element.style.top = playerOnePiece.y + 'px';
 };
 
-var detectPieceTwoMovement = function(){
+var detectPieceMovement = function(){
   if (keys[keys.TWOUP]){
     movePieceTwo(0, -15); //speed and direction piece moves on key
   } if (keys[keys.TWODOWN]){
@@ -52,6 +62,23 @@ var detectPieceTwoMovement = function(){
 };
 
 setInterval(function(){
-  detectPieceTwoMovement();
-}, 1000/24);
+  detectPieceMovement();
+  settingRandomBall();
+}, 1000/24); //function called 24 times per sec (smoothness of movement)
+
+var moveSnitch = function(dx, dy){
+  snitchBall.x += dx;
+  snitchBall.y += dy;
+  snitchBall.element.style.left = snitchBall.x + 'px';
+  snitchBall.element.style.top = snitchBall.y + 'px';
+};
+
+function settingRandomBall(){
+  if (Math.random() < 0.5){
+    moveSnitch(0, -15);
+  } else {
+    moveSnitch(0, 15);
+  }
+};
+
 }
