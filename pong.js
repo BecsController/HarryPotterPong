@@ -66,15 +66,19 @@ var ballX = 10;
 var ballY = 10;
 
 function moveBall(){
-  if (snitchBall.x > 470){
+  if (snitchBall.x > 860){
     ballX = -ballX;
-  } if (snitchBall.x < -390){
+  } if (snitchBall.x < 0){
     ballX = -ballX;
+  } if (snitchBall.y > 570){
+    ballY = -ballY;
+  } if (snitchBall.y < 0){
+    ballY = -ballY;
   }
   snitchBall.x += ballX;
   snitchBall.element.style.left = snitchBall.x + 'px';
-  //  snitchBall.y += ballY;
-  //  snitchBall.element.style.top = snitchBall.y + 'px';
+  snitchBall.y += ballY;
+  snitchBall.element.style.top = snitchBall.y + 'px';
 };
 
 }
