@@ -23,8 +23,8 @@ var playerOnePiece = {
   element: document.getElementsByClassName("gryfGamePiece")[0]
 };
 var snitchBall = {
-  x: 400,
-  y: 200,
+  x: 412,
+  y: 264, //approx the middle of the board
   element: document.getElementsByClassName("snitch")[0]
 };
 
@@ -46,14 +46,14 @@ var movePieceOne = function(dy){
 };
 
 var detectPieceMovement = function(){
-  if (keys[keys.TWOUP]){
+  if ((playerTwoPiece.y > 0) && (keys[keys.TWOUP])){
     movePieceTwo(-15); //speed and direction piece moves on key ie amount of pixels from bottom
-  } if (keys[keys.TWODOWN]){
-    movePieceTwo(15);
-  } if (keys[keys.ONEUP]){
+  } if ((playerTwoPiece.y < 435) && (keys[keys.TWODOWN])){
+    movePieceTwo(15);  //how far goes down y axis
+  } if ((playerOnePiece.y > 0) && (keys[keys.ONEUP])){
     movePieceOne(-15);
-  } if (keys[keys.ONEDOWN]){
-    movePieceOne(15);
+  } if ((playerOnePiece.y < 435) && (keys[keys.ONEDOWN])){
+    movePieceOne(15); //As long as p1piece is between 0 and 435 pixels it will move
   }
 };
 
@@ -62,16 +62,16 @@ setInterval(function(){
   moveBall();
 }, 1000/24); //function called 24 times per sec (smoothness of movement)
 
-var ballX = 10;
+var ballX = 10; //amount of pixels it moves by on x axis
 var ballY = 10;
-var pieceTwox = 860 - 48;
-var pieceTwoy = 198;
-var pieceOnex = 0 + 48;
+var pieceTwoX = 860 - 48; //width of gameboard - width of raquet
+var pieceTwoH = 198;  // height of raquet
+var pieceOneX = 0 + 48;  //Left edge of gameboard + width of raquet
 
 function moveBall(){
-  if (snitchBall.x > pieceTwox){ // width of gameboard
+  if (snitchBall.x > pieceTwoX){ // width of gameboard
     ballX = -ballX;         // reverse direction of ball
-  } if (snitchBall.x < pieceOnex){
+  } if (snitchBall.x < pieceOneX){
     ballX = -ballX;
   } if (snitchBall.y > 570){  //height of gameboard
     ballY = -ballY;

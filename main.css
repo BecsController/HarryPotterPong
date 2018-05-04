@@ -20,8 +20,6 @@ body {
 
 .slyGamePiece{
   position: absolute;
-  padding-left: 875px;
-  padding-top: 440px;
 }
 .gryfGamePiece{
   position: absolute;
