@@ -72,14 +72,26 @@ function setSlyPieceDefaultPosition(){
   playerTwoPiece.element.style.top = playerTwoPiece.y + 'px';
 }; //set raquet two paddle position to bottom right
 
+var ballStartDirection = 0;
+
+function generateStartDirection(){
+  var generatedDigit = Math.random();
+  if (generatedDigit < 0.5){
+    ballStartDirection = -5;
+  } if (generatedDigit >= 0.5){
+    ballStartDirection = 5;
+  }
+};
+generateStartDirection();
+
 setInterval(function(){
   setSlyPieceDefaultPosition();
   detectPieceMovement();
   moveBall();
 }, 1000/60); //function called 60 times per sec (smoothness of movement)
 
-var ballX = 5; //amount of pixels it moves by on x axis
-var ballY = 5;
+var ballX = ballStartDirection; //amount of pixels it moves by on x axis
+var ballY = ballStartDirection;
 var pieceTwoX = 860 - 48; //width of gameboard - width of raquet
 var pieceTwoH = 198;  // height of raquet
 var pieceOneX = 0 + 48;  //Left edge of gameboard + width of raquet
@@ -114,7 +126,7 @@ function moveBall(){
   } if (snitchBall.y < 0){
     ballY = -ballY;
   }
-  snitchBall.x += ballX;  
+  snitchBall.x += ballX;
   snitchBall.element.style.left = snitchBall.x + 'px';
   snitchBall.y += ballY;
   snitchBall.element.style.top = snitchBall.y + 'px';
