@@ -23,7 +23,7 @@ resetScores.addEventListener("click", function(){
 }); //set score counts back to zero and push to div
 
 var playerTwoPiece = {
-  x: 875, //where piece starts on x axis comparative to elem start pos
+  x: 914, //where piece starts on x axis comparative to elem start pos
   y: 440,  // where piece starts on y axis
   element: document.getElementsByClassName("slyGamePiece")[0]
 };
@@ -92,13 +92,12 @@ setInterval(function(){
 
 var ballX = ballStartDirection; //amount of pixels it moves by on x axis
 var ballY = ballStartDirection;
-var pieceTwoX = 860 - 48; //width of gameboard - width of raquet
+var pieceTwoX = 865 - 10; //width of gameboard - width of raquet
 var pieceTwoH = 198;  // height of raquet
-var pieceOneX = 0 + 48;  //Left edge of gameboard + width of raquet
+var pieceOneX = 0 + 10;  //Left edge of gameboard + width of raquet
 var pieceOneH = 198;
-var pieceOneW = 48;
-var pieceTwoW = 48;
-var gameBoardRightEdge = 860;
+var pieceOneW = 10;
+var pieceTwoW = 10;
 
 function moveBall(){
   if ((snitchBall.x > pieceTwoX) && (snitchBall.x <= playerTwoPiece.x + pieceTwoW)
@@ -111,7 +110,7 @@ function moveBall(){
     new Audio("sound/Smack-SoundBible.com-1427823671.mp3").play()
     ballX = ballX + (0.1 * ballX);
     ballX = -ballX;
-  } if (snitchBall.x > 860){ // if ball hits right side of game board
+  } if (snitchBall.x > 865){ // if ball hits right side of game board
     scoreCountOne++; // increase score of player one
     playerOneScore.innerHTML = scoreCountOne; //set score to score board
     new Audio("sound/40_smith_wesson_single-mike-koenig.mp3").play()
