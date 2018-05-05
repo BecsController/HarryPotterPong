@@ -103,21 +103,25 @@ var gameBoardRightEdge = 860;
 function moveBall(){
   if ((snitchBall.x > pieceTwoX) && (snitchBall.x <= playerTwoPiece.x + pieceTwoW)
   && (snitchBall.y >= playerTwoPiece.y) && (snitchBall.y <= playerTwoPiece.y + pieceTwoH)){ // if ball hits slytherin raquet
+    new Audio("sound/Banana_Slap-AngryFlash-2001109808.mp3").play()
     ballX = ballX + (0.1 * ballX);
     ballX = -ballX;         // reverse direction of ball
   } if ((snitchBall.x < pieceOneX) && (snitchBall.x <= playerOnePiece.x + pieceOneW)
   && (snitchBall.y >= playerOnePiece.y) && (snitchBall.y <= playerOnePiece.y + pieceOneH)){ //if ball hits gryffindor raquet
+    new Audio("sound/Smack-SoundBible.com-1427823671.mp3").play()
     ballX = ballX + (0.1 * ballX);
     ballX = -ballX;
   } if (snitchBall.x > 860){ // if ball hits right side of game board
     scoreCountOne++; // increase score of player one
     playerOneScore.innerHTML = scoreCountOne; //set score to score board
+    new Audio("sound/40_smith_wesson_single-mike-koenig.mp3").play()
     ballX = -ballX;  //reverse direction
     ballX = -5;     //reset to start speed
     ballY = -5;
   } if (snitchBall.x < 0) { //if ball hits left side of game board
     scoreCountTwo++;
     playerTwoScore.innerHTML = scoreCountTwo;
+    new Audio("sound/40_smith_wesson_single-mike-koenig.mp3").play()
     ballX = -ballX;
     ballX = 5;
     ballY = 5;
