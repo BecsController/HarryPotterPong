@@ -14,8 +14,6 @@ var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0];
 var resetScores = document.getElementsByClassName("reset")[0];
 var scoreCountOne = 0;
 var scoreCountTwo = 0;
-var hitCount = 0;
-var hitCountShown = document.getElementsByClassName("hitCount")[0];
 
 resetScores.addEventListener("click", function(){
   scoreCountOne = 0;
@@ -92,23 +90,17 @@ var pieceTwoW = 48;
 function moveBall(){
   if ((snitchBall.x > pieceTwoX) && (snitchBall.x <= playerTwoPiece.x + pieceTwoW)
   && (snitchBall.y >= playerTwoPiece.y) && (snitchBall.y <= playerTwoPiece.y + pieceTwoH)){ // if ball hits slytherin raquet
-    hitCount++;     //keep track of how many time ball hits a raquet
-    hitCountShown.innerHTML = '(For Jake) hit count = ' + hitCount;
+    ballX = ballX + (0.1 * ballX);
     ballX = -ballX;         // reverse direction of ball
   } if ((snitchBall.x < pieceOneX) && (snitchBall.x <= playerOnePiece.x + pieceOneW)
   && (snitchBall.y >= playerOnePiece.y) && (snitchBall.y <= playerOnePiece.y + pieceOneH)){ //if ball hits gryffindor raquet
-    hitCount++;
-    hitCountShown.innerHTML = '(For Jake) hit count = ' + hitCount;
+    ballX = ballX + (0.1 * ballX);
     ballX = -ballX;
   } if (snitchBall.x > 860){ // if ball hits right side of game board
-    hitCount = 0;
-    hitCountShown.innerHTML = '(For Jake) hit count = ' + hitCount;
     scoreCountOne++; // increase score of player one
     playerOneScore.innerHTML = scoreCountOne; //set score to score board
     ballX = -ballX;
   } if (snitchBall.x < 0) { //if ball hits left side of game board
-    hitCount = 0;
-    hitCountShown.innerHTML = '(For Jake) hit count = ' + hitCount;
     scoreCountTwo++;
     playerTwoScore.innerHTML = scoreCountTwo;
     ballX = -ballX;
