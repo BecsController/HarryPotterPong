@@ -1,3 +1,14 @@
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { ... }
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { ... }
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { ... }
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }
 body {
   font-family: 'Atarian';
 }
@@ -35,18 +46,24 @@ body {
   margin-bottom: 5px;
 }
 h1 {
+  text-align: center;
   padding: 1rem 1rem 0 7rem;
   font-weight: bold;
 }
 h3{
+  text-align: center;
   padding-left: 20rem;
 }
 h4 {
-  padding: 1rem 1rem 1rem 2.5rem;
+  padding-left: 3.5rem;
   font-weight: bold;
+  text-align: center;
 }
 p {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+}
+#caution {
+  padding-left: 10rem;
 }
