@@ -86,6 +86,7 @@ var pieceOneX = 0 + 48;  //Left edge of gameboard + width of raquet
 var pieceOneH = 198;
 var pieceOneW = 48;
 var pieceTwoW = 48;
+var gameBoardRightEdge = 860;
 
 function moveBall(){
   if ((snitchBall.x > pieceTwoX) && (snitchBall.x <= playerTwoPiece.x + pieceTwoW)
@@ -96,34 +97,27 @@ function moveBall(){
   && (snitchBall.y >= playerOnePiece.y) && (snitchBall.y <= playerOnePiece.y + pieceOneH)){ //if ball hits gryffindor raquet
     ballX = ballX + (0.1 * ballX);
     ballX = -ballX;
-  } if (snitchBall.x > 858){ // if ball hits right side of game board
+  } if (snitchBall.x > 860){ // if ball hits right side of game board
     scoreCountOne++; // increase score of player one
     playerOneScore.innerHTML = scoreCountOne; //set score to score board
-    resetSpeed()
-    ballX = -ballX;
+    ballX = -ballX;  //reverse direction
+    ballX = -5;     //reset to start speed
+    ballY = -5;
   } if (snitchBall.x < 0) { //if ball hits left side of game board
     scoreCountTwo++;
     playerTwoScore.innerHTML = scoreCountTwo;
-    resetSpeed();
     ballX = -ballX;
-  } if (snitchBall.y > 570){  //height of gameboard
+    ballX = 5;
+    ballY = 5;
+  } if (snitchBall.y > 570){  //if ball hits height of gameboard reverse direction
     ballY = -ballY;
   } if (snitchBall.y < 0){
     ballY = -ballY;
   }
-  snitchBall.x += ballX;
+  snitchBall.x += ballX;  
   snitchBall.element.style.left = snitchBall.x + 'px';
   snitchBall.y += ballY;
   snitchBall.element.style.top = snitchBall.y + 'px';
 };
 
-function resetSpeed(){
-  if (ballX = ballX){ //if x pos is positive return to pos first speed
-    ballX = 5;
-    ballY = 5;
-  } if (ballX = -ballX){ //if x pos is negative return to neg first speed
-    ballX = -5;
-    ballY = -5;
-  }
-};
 }
