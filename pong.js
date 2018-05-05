@@ -11,9 +11,17 @@ var keys = {};
 var gameBoard = document.getElementsByClassName("gameBoard")[0];
 var playerOneScore = document.getElementsByClassName("playerOneScore")[0];
 var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0];
+var resetScores = document.getElementsByClassName("reset")[0];
 var scoreCountOne = 0;
 var scoreCountTwo = 0;
 var hitCount = 0;
+
+resetScores.addEventListener("click", function(){
+  scoreCountOne = 0;
+  scoreCountTwo = 0;
+  playerOneScore.innerHTML = scoreCountOne;
+  playerTwoScore.innerHTML = scoreCountTwo;
+});
 
 var playerTwoPiece = {
   x: 875, //where piece starts on x axis comparative to elem start pos
@@ -89,10 +97,12 @@ function moveBall(){
   } if (snitchBall.x > 860){ // if ball hits right side of game board
     scoreCountOne++; // increase score of player one
     playerOneScore.innerHTML = scoreCountOne; //set score to score board
+    hitCount = 0;
     ballX = -ballX;
   } if (snitchBall.x < 0) { //if ball hits left side of game board
     scoreCountTwo++;
     playerTwoScore.innerHTML = scoreCountTwo;
+    hitCount = 0;
     ballX = -ballX;
   } if (snitchBall.y > 570){  //height of gameboard
     ballY = -ballY;
