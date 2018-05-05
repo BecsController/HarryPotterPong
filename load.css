@@ -1,0 +1,58 @@
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { ... }
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { ... }
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { ... }
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }
+
+@font-face {
+    font-family: 'harry_pregular';
+    src: url('/fonts/Harry_Potter/harryp__-webfont.woff2') format('woff2'),
+         url('/fonts/Harry_Potter/harryp__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'harry_pregular', 'Merriweather', 'Skranji', cursive;
+  background-color: #000;
+}
+h1 {
+  text-align: center;
+  padding: 7rem 3rem 3rem 7rem;
+  font-weight: bold;
+  color: #fff;
+}
+h2 {
+  text-align: center;
+  padding: 1rem 3rem 3rem 7rem;
+  font-weight: bold;
+  color: #fff;
+}
+.button{
+  border: 2px solid #2e2e2e;
+  cursor: pointer;
+  padding: 20px 30px;
+  position: relative;
+  text-align: center;
+  transition:
+        background-color 5s cubic-bezier(0.19, 1, 0.22, 1),
+        border 1s cubic-bezier(0.19, 1, 0.22, 1),
+        color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    user-select: none;
+}
+.button a {
+  color: #969696;
+  text-decoration: none;
+}
+/*.container{
+  display: none;
+}

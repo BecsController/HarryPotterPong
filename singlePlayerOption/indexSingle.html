@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Harry Potter Pong</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="singleMain.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href="Atarian/SF Atarian System Extended.ttf" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="singlePlayer.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="row no-gutters">
+          <h1>Start your brooms, it's Harry Potter Pong</h1>
+        </div>
+      <div class="row no-gutters">
+          <h3>Single Player Version</h3>
+      </div>
+      <div class="row no-gutters scoreBoard">
+        <p class="col-sm-6">
+          <span class="gryColOne">Player </span><span class="gryColTwo">High  </span><span class="gryColOne">Score</span>
+        </p>
+        <p class="col-sm-6">
+          <span class="gryColOne">Player </span><span class="gryColTwo">Current </span><span class="gryColOne">Score</span>
+        </p>
+        <p class="col-sm-6 playerHighScore">
+          0
+        </p>
+        <p class="col-sm-6 playerCurrentScore">
+          0
+        </p>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-sm-10 gameBoard">
+          <img class="gryfGamePiece" src="../images/Gryffindorcolors.png">
+          <img class="snitch" src="../images/Golden_Snitch_Resize.png">
+      </div>
+      <div class="row no-gutters">
+        <h4> <span class="gryColOne">Move with Up and Down arrows,</span><span class="gryColTwo"> see how many hits you can get!</span></h4>
+        <h4 id="caution"> Watch out! The golden snitch speeds up every time it hits the raquet </h4>
+      </div>
+      </div>
+    </div>
+  </body>

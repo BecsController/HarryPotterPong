@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Harry Potter Pong Two Player</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href="Atarian/SF Atarian System Extended.ttf" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="pong.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="row no-gutters">
+          <h1>Start your brooms, it's Harry Potter Pong</h1>
+        </div>
+      <div class="row no-gutters">
+          <h3>Two player version</h3>
+      </div>
+      <div class="row no-gutters scoreBoard">
+        <p class="col-sm-6">
+          <span class="gryColOne">Player </span><span class="gryColTwo">One </span><span class="gryColOne">(Gryffindor)</span>
+        </p>
+        <p class="col-sm-6">
+          <span class="slyColOne">Player </span><span class="slyColTwo">Two </span><span class="slyColOne">(Slytherin)</span>
+        </p>
+        <p class="col-sm-4 playerOneScore">
+          0
+        </p>
+        <button class="col-sm-1 reset">Reset Scores</button>
+        <p class="col-sm-4 playerTwoScore">
+          0
+        </p>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-sm-10 gameBoard">
+          <img class="gryfGamePiece" src="../images/Gryffindorcolors.png">
+          <img class="snitch" src="../images/Golden_Snitch_Resize.png">
+          <img class="slyGamePiece" src="../images/Slytherincolors.png">
+      </div>
+      <div class="row no-gutters">
+        <h4><span class="gryColOne">Player One move with W and S</span> and <span class="slyColOne">Player Two moves with Up and Down arrows</span></h4>
+        <h4 id="caution"> Watch out! The golden snitch speeds up every time it hits a raquet </h4>
+      </div>
+      </div>
+    </div>
+  </body>
