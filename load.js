@@ -4,8 +4,10 @@ function start(){
 
 var onePlayer = document.getElementById("OnePlayer");
 var twoPlayer = document.getElementById("TwoPlayer");
+var theme = document.querySelector('Audio');
 
 onePlayer.addEventListener("click", function(){
+  theme.play();
   $(".container").fadeOut("3500");
   setTimeout(loadSingleGame, 7000);
 });
@@ -19,21 +21,10 @@ function loadMultiGame(){
 };
 
 twoPlayer.addEventListener("click", function() {
+  theme.play();
   $(".container").fadeOut("3500");
   setTimeout(loadMultiGame, 7000);
 });
-
-  var a = document.querySelector('Audio');
-
-  function pausePlay() {
-    console.log('Will now try to pause video and play it again in same eventloop');
-    a.pause();
-    a.play();
-  }
-  window.onload = function() {
-    a.play();
-    setInterval(pausePlay, 1000);
-  };
 
   $(".container").fadeIn(2500).css("display","block");
 
