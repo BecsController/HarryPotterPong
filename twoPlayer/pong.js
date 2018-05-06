@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', start);
 
 function start(){
-
+$(".container").fadeIn(2500).css("display","block");
 var keys = {};
     keys.TWOUP = 38;    //keycode up arrow
     keys.TWODOWN = 40;  //keycode down arrow
@@ -11,9 +11,14 @@ var keys = {};
 var gameBoard = document.getElementsByClassName("gameBoard")[0];
 var playerOneScore = document.getElementsByClassName("playerOneScore")[0];
 var playerTwoScore = document.getElementsByClassName("playerTwoScore")[0];
-var resetScores = document.getElementsByClassName("reset")[0];
+var resetScores = document.getElementById("reset");
 var scoreCountOne = 0;
 var scoreCountTwo = 0;
+var homePage = document.getElementById("homePage");
+
+homePage.addEventListener("click", function(){
+  location.href = "https://rebdugnz.github.io/HarryPotterPong/";
+});
 
 resetScores.addEventListener("click", function(){
   scoreCountOne = 0;
@@ -23,8 +28,8 @@ resetScores.addEventListener("click", function(){
 }); //set score counts back to zero and push to div
 
 var playerTwoPiece = {
-  x: 914, //where piece starts on x axis comparative to elem start pos
-  y: 440,  // where piece starts on y axis
+  x: 904, //where piece starts on x axis comparative to elem start pos
+  y: 410,  // where piece starts on y axis
   element: document.getElementsByClassName("slyGamePiece")[0]
 };
 var playerOnePiece = {
@@ -58,11 +63,11 @@ var movePieceOne = function(dy){
 var detectPieceMovement = function(){
   if ((playerTwoPiece.y > 0) && (keys[keys.TWOUP])){
     movePieceTwo(-5); //speed and direction piece moves on key ie amount of pixels from bottom
-  } if ((playerTwoPiece.y < 435) && (keys[keys.TWODOWN])){
+  } if ((playerTwoPiece.y < 407) && (keys[keys.TWODOWN])){
     movePieceTwo(5);  //how far goes down y axis
   } if ((playerOnePiece.y > 0) && (keys[keys.ONEUP])){
     movePieceOne(-5);
-  } if ((playerOnePiece.y < 435) && (keys[keys.ONEDOWN])){
+  } if ((playerOnePiece.y < 407) && (keys[keys.ONEDOWN])){
     movePieceOne(5); //As long as p1piece is between 0 and 435 pixels it will move
   }
 };
@@ -124,7 +129,7 @@ function moveBall(){
     ballX = -ballX;
     ballX = 5;
     ballY = 5;
-  } if (snitchBall.y > 570){  //if ball hits height of gameboard reverse direction
+  } if (snitchBall.y > 550){  //if ball hits height of gameboard reverse direction
     ballY = -ballY;
   } if (snitchBall.y < 0){
     ballY = -ballY;

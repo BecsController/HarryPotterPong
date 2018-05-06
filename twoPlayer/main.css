@@ -10,11 +10,15 @@
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { ... }
 body {
-  font-family: 'Atarian';
+  font-family: 'Merriweather', 'Skranji', cursive;
+  background-color: #202020;
+  background-image: radial-gradient(10% 100% ellipse at bottom center,
+  rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%);
 }
 .gameBoard{
   background-color: #000;
-  height: 640px;
+  height: 620px;
+  border:5px solid #f9fafb;
 }
 .gryColOne{
   color: #7F0909;
@@ -40,30 +44,71 @@ body {
 .playerTwoScore{
   margin-left: 6rem;
 }
-.reset{
-  color: #544E72;
-  box-shadow: 3px 3px 5px 0px rgba(99,97,99,1);
+#reset{
+  color: #969696;
   margin-bottom: 5px;
 }
-h1 {
+.button{
+  border: 2px solid #2e2e2e;
+  cursor: pointer;
+  padding: 10px 50px;
+  position: relative;
   text-align: center;
-  padding: 1rem 1rem 0 7rem;
+}
+.button a {
+  color: #969696;
+  text-decoration: none;
+}
+.button .mask {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100px;
+    position: absolute;
+    width: 200px;
+}
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 245, 245, 0.8);
+}
+
+.button:hover a {
+    color: #fff;
+}
+
+.button:active {
+    background-color: #fff;
+}
+
+.button:active a {
+    color: #202020;
+}
+.slyTitle {
+  margin-left: 6rem;
+}
+h1 {
+  color: #fff;
+  text-align: center;
+  padding: 1rem 1rem 0 5rem;
   font-weight: bold;
+  font-size: 2.25rem;
 }
 h3{
   text-align: center;
-  padding-left: 20rem;
+  padding-left: 21rem;
+  color: #fff;
 }
 h4 {
-  padding-left: 3.5rem;
   font-weight: bold;
   text-align: center;
+  color: #fff;
 }
 p {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  color: #fff;
 }
 #caution {
-  padding-left: 8rem;
+  padding-left: 4rem;
 }

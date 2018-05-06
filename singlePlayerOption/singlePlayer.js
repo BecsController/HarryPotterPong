@@ -11,6 +11,11 @@ var playerHighScore = document.getElementsByClassName("playerHighScore")[0];
 var playerCurrentScore = document.getElementsByClassName("playerCurrentScore")[0];
 var highScoreCount = 0;
 var currentScoreCount = 0;
+var homePage = document.getElementsByClassName("button")[0];
+
+homePage.addEventListener("click", function(){
+  location.href = "https://rebdugnz.github.io/HarryPotterPong/";
+});
 
 var playerOnePiece = {
   x: 0,
@@ -38,7 +43,7 @@ var movePieceOne = function(dy){
 var detectPieceMovement = function(){
     if ((playerOnePiece.y > 0) && (keys[keys.TWOUP])){
     movePieceOne(-5);
-  } if ((playerOnePiece.y < 435) && (keys[keys.TWODOWN])){
+  } if ((playerOnePiece.y < 427) && (keys[keys.TWODOWN])){
     movePieceOne(5); //As long as p1piece is between 0 and 435 pixels it will move
   }
 };
