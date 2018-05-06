@@ -17,7 +17,7 @@ function loadSingleGame(){
 };
 
 function loadMultiGame(){
-  window.location.replace("twoPlayer/index.html");
+  window.location.replace("twoPlayer/indextwoplay.html");
 };
 
 twoPlayer.addEventListener("click", function() {
